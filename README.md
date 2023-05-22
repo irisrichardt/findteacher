@@ -1,16 +1,20 @@
 # findteacher
 
-A new Flutter project.
+Projeto em Flutter
 
-## Getting Started
+## Descrição
 
-This project is a starting point for a Flutter application.
+O objetivo do app visa facilitar a busca por professores/técnicos particulares.
 
-A few resources to get you started if this is your first Flutter project:
+Ex:
+- Aluno solicita professor para aulas particulares de algoritmo;
+- Produto solicita técnico para vistoria da lavoura.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+No app, o usuário logado como técnico ou professores pode:
+- Gerenciar sua conta;
+- Gerenciar informações sobre a aula/serviço (valor, dia, horário, etc);
+- Visualizar quem contratou.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Os clients podem:
+- Buscar professores/técnicos;
+- Contratar aula.
