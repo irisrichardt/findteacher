@@ -1,20 +1,20 @@
-# findteacher
+# ConectaPro
 
 Projeto em Flutter
 
 ## Descrição
 
-O objetivo do app visa facilitar a busca por professores/técnicos particulares.
+O objetivo do app visa facilitar a busca por profissionais em diversas áreas.
 
 Ex:
-- Aluno solicita professor para aulas particulares de algoritmo;
-- Produto solicita técnico para vistoria da lavoura.
+- Cliente solicita profissional para aulas particulares de algoritmo;
+- Cliente solicita técnico para vistoria da lavoura.
 
-No app, o usuário logado como técnico ou professores pode:
+No app, o usuário logado como profissional poderá:
 - Gerenciar sua conta;
 - Gerenciar informações sobre a aula/serviço (valor, dia, horário, etc);
 - Visualizar quem contratou.
 
-Os clients podem:
-- Buscar professores/técnicos;
+Os clientes podem:
+- Buscar por profissional;
 - Contratar aula.
