@@ -1,3 +1,4 @@
+import 'package:findteacher/app/components/ft_text_form_field.dart';
 import 'package:findteacher/theme/theme_data.dart';
 import 'package:flutter/material.dart';
 
@@ -49,12 +50,19 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-             const Text(
-              'Encontrar um professor',
-            ),
-            ElevatedButton(onPressed: () {}, child: Text('Buscar')),
-            OutlinedButton(onPressed: () {}, child: Text('Seja um professor')),
-            ElevatedButton(onPressed: () {}, child: Text('Consultar aulas')),
+            //  const Text(
+            //   'Encontrar um professor',
+            // ),
+            // ElevatedButton(onPressed: () {}, child: Text('Buscar')),
+            // OutlinedButton(onPressed: () {}, child: Text('Seja um professor')),
+            // ElevatedButton(onPressed: () {}, child: Text('Consultar aulas')),
+            // const Text(
+            //   '15 de out. dia do professor!'
+            // ),
+
+            OutlinedButton(onPressed: () {}, child: Text('Botão')),
+            ElevatedButton(onPressed: () {}, child: Text('Botão 2')),
+            FTTextFormField(suffix: Icon(Icons.search), label: 'Encontre um professor',),
             const Text(
               '15 de out. dia do professor!'
             ),
