@@ -1,8 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class FTTextFormField extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
@@ -50,12 +47,11 @@ class FTTextFormField extends StatelessWidget {
         onTap: onTap,
         inputFormatters: inputFormatters,
         decoration: InputDecoration(
-          border: const OutlineInputBorder(),
-          suffix: suffix,
-          fillColor: fillColor,
-          isDense: isDense,
-          label: Text(label ?? ''),
-        ),
+            border: const OutlineInputBorder(),
+            suffix: suffix,
+            fillColor: fillColor,
+            isDense: isDense,
+            label: Text(label ?? '')),
       ),
     );
   }

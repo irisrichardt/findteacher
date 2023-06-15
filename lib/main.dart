@@ -1,6 +1,10 @@
+import 'package:findteacher/app/components/ft_outlined_button.dart';
 import 'package:findteacher/app/components/ft_text_form_field.dart';
 import 'package:findteacher/theme/theme_data.dart';
 import 'package:flutter/material.dart';
+
+import 'app/components/ft_elevated_button.dart';
+import 'app/components/ft_text_title.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,19 +54,20 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            //  const Text(
-            //   'Encontrar um professor',
-            // ),
-            // ElevatedButton(onPressed: () {}, child: Text('Buscar')),
-            // OutlinedButton(onPressed: () {}, child: Text('Seja um professor')),
-            // ElevatedButton(onPressed: () {}, child: Text('Consultar aulas')),
-            // const Text(
-            //   '15 de out. dia do professor!'
-            // ),
-
-            OutlinedButton(onPressed: () {}, child: Text('Botão')),
-            ElevatedButton(onPressed: () {}, child: Text('Botão 2')),
-            FTTextFormField(suffix: Icon(Icons.search), label: 'Encontre um professor',),
+            FTTextTitle(text: 'Find Teacher', size: FTSizeTitle.normal),
+            FTTextFormField(label: 'Buscar professor'),
+            FTElevatedButton(
+              child: Text('Buscar'),
+              onPressed: () {},
+            ),
+            FTOutlinedButton(
+              child: Text('Seja um professor'),
+              onPressed: () {}
+            ),
+            FTElevatedButton(
+              child: Text('Consultar aulas'),
+              onPressed: () {},
+            ),
             const Text(
               '15 de out. dia do professor!'
             ),
