@@ -4,14 +4,27 @@ import '../../components/ft_elevated_button.dart';
 import '../../components/ft_outlined_button.dart';
 import '../../components/ft_text_form_search.dart';
 import '../../components/ft_text_title.dart';
+import '../controller/inicial_controller.dart';
 
-class InicialView extends StatelessWidget {
+class InicialView extends StatefulWidget {
   const InicialView({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    final _mediaQuery = MediaQuery.of(context);
+  State<InicialView> createState() => _InicialViewState();
+}
 
+class _InicialViewState extends State<InicialView> {
+  final _key = GlobalKey<FormState>();
+  late final _mediaQuery = MediaQuery.of(context);
+  late final controller = InicialController(isValidForm: () =>
+    _key.currentState?.validate() ?? false,
+    onNavigatorProfessor: (route, search) =>
+        Navigator.pushNamed(context, route, arguments: search),
+  );
+
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
        appBar: AppBar(),
       body: SingleChildScrollView(
@@ -23,6 +36,7 @@ class InicialView extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Form(
+                  key: _key,
                   child: Column(
                     children: [
                       const FTTextTitle(
@@ -30,12 +44,13 @@ class InicialView extends StatelessWidget {
                         size: FTSizeTitle.large,
                       ),
                       FTTextFormSearch(
-                        controller: TextEditingController(),
+                        controller: controller.searchController,
+                        validator: controller.validateSarch,
                         padding: const EdgeInsets.symmetric(vertical: 20),
                       ),
                       FTElevatedButton(
+                        onPressed: controller.buscarProfessor,
                         child: const Text('Buscar professor'),
-                        onPressed: () {},
                       ),
                     ],
                   ),
@@ -46,24 +61,24 @@ class InicialView extends StatelessWidget {
                 child: Column(
                   children: [
                     FTElevatedButton(
-                      onPressed: () {},
+                      onPressed: controller.sejaProfessor,
                       style: ElevatedButton.styleFrom(
                         primary: Theme.of(context).primaryColorLight,
                       ),
                       child: const Text('Seja um professor'),
                     ),
                     FTOutlinedButton(
+                      onPressed: controller.consultarAula,
                       child: const Text('Consultar minhas aulas'),
-                      onPressed: () {},
                     ),
                   ],
                 ),
               ),
               const FTTextTitle(
-                    text: '15 de Out. dia do professor!',
-                    size: FTSizeTitle.small,
-                    color: Colors.black45,
-                  ),
+                text: '15 de Out. dia do professor!',
+                size: FTSizeTitle.small,
+                color: Colors.black45,
+              ),
             ],
           ),
         ),

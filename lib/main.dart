@@ -1,4 +1,6 @@
+import 'package:findteacher/app/modules/pesquisa_professor/views/pesquisa_professor_view.dart';
 import 'package:findteacher/app/modules/views/inicial_view.dart';
+import 'package:findteacher/routes.dart';
 import 'package:findteacher/theme/theme_data.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +19,10 @@ class MyApp extends StatelessWidget {
       theme: CustomThemeData.light(),
       // darkTheme: CustomThemeData.dark(),
       // themeMode: ThemeMode.dark,
-      home: const InicialView(),
+      routes: {
+        Routes.INCIAL: (context) => const InicialView(),
+        Routes.PESQUISA_PROFESSOR: (context) => const PesquisaProfessorView(),
+      },
     );
   }
 }
